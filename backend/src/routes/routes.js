@@ -9,7 +9,7 @@ const userValidation= require('../validators/uservalidation');
 
 // Usuários
 route.get('/usuarios', usuariosController.getUsuario);
-//route.post('/usuarios', validate(userValidation),usuariosController.createUsuario);
+route.post('/usuarios', validate(userValidation),usuariosController.createUsuario);
 
 // Publicações com validação
 route.get('/publicacoes', publicacoesController.getPublicacoes);

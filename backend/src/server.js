@@ -6,6 +6,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(routes); // todas as rotas centralizadas aqui
 
+const cors = require('cors');
+app.use(cors());
+
+
 const start = (port) => {
   try {
     app.listen(port, () => {
