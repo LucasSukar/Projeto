@@ -1,11 +1,10 @@
 const express = require("express");
-const yup = require("yup");
 const app = express();
-const routes = require('./routes/routes')
-app.use(express.json());
-app.use(express.urlencoded({extended:true})) //pra ver os conteudo do post
-app.use(routes) // para rotas
+const routes = require('./routes/routes');
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(routes); // todas as rotas centralizadas aqui
 
 const start = (port) => {
   try {
