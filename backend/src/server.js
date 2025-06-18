@@ -1,24 +1,10 @@
-const express = require("express");
-const app = express();
-const routes = require('./routes/routes');
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(routes); // todas as rotas centralizadas aqui
-
+const express = require('express');
 const cors = require('cors');
+const route = require('./routes/routes');
+
+const app = express();
 app.use(cors());
-app.use('/api', routes)
+app.use(express.json());
+app.use(route);
 
-
-const start = (port) => {
-  try {
-    app.listen(port, () => {
-      console.log(`Api running at: http://localhost:${port}`);
-    });
-  } catch (err) {
-    console.error(err);
-    process.exit();
-  }
-};
-start(3000);
+app.listen(3000, () => console.log('Servidor rodando na porta 3000'));

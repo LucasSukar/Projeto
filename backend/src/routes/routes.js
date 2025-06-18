@@ -13,6 +13,6 @@ route.post('/usuarios', validate(userValidation),usuariosController.createUsuari
 
 // Publicações com validação
 route.get('/publicacoes', publicacoesController.getPublicacoes);
-//route.post('/publicacoes', validate(publiValidation), publicacoesController.createPublicacao);
+route.post('/publicacoes',publicacoesController.createPubli);
 
 module.exports = route;

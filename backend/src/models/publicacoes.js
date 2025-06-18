@@ -30,4 +30,4 @@ const Postagem = database.define('Postagem', {
   }
 });
 
-module.exports = Postagem;
+module.exports = Postagem
