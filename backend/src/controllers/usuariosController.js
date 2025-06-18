@@ -3,9 +3,10 @@ const SECRET = 'sukar'
 const model = require('../models/usuarios')
 
 
-exports.getUsuario = (req, res) => {
-    res.send('oi')
-}
+exports.getUsuario = async (req, res) => {
+  const usuarios = await model.findAll();
+  res.json(usuarios);
+};
 
 exports.createUsuario = async (req, res) =>{
     const {nome, email, senha} = req.body

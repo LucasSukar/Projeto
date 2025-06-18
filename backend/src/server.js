@@ -8,6 +8,7 @@ app.use(routes); // todas as rotas centralizadas aqui
 
 const cors = require('cors');
 app.use(cors());
+app.use('/api', routes)
 
 
 const start = (port) => {
@@ -20,4 +21,4 @@ const start = (port) => {
     process.exit();
   }
 };
-start(3333);
+start(3000);
